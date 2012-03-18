@@ -1,3 +1,3 @@
 database = db
-username = nem
+username = name
 password = secret
