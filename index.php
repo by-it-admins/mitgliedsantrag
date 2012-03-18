@@ -7,7 +7,9 @@ switch ($_SERVER['HTTP_ORIGIN']) {
     header('Access-Control-Allow-Headers: Content-Type');
     break;
 }
-include ("password.php");
+
+$config = parse_ini_file("config.php");
+
 
 function formular($titel='',$vorname='',$nachname='',$email='',$gebdatum='',$strasse='',$snr='',$plz='',$ort='',$nat='',$telefon='',$fax='',$newsletter=0,$jupi=0,$arm=0,$liquid=0,$comment='',$umfragen=0)
 {
@@ -64,7 +66,7 @@ else
 {
    if($_POST["send"]==1)
    {
-     $link=mysql_connect('localhost',$username,$password);
+     $link=mysql_connect('localhost',$config['username'],$config['password']);
       if (!$link) {
        echo "<p style='color: red;' > Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</p>";
       formular();
