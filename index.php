@@ -66,7 +66,7 @@ else
    {
      $link=mysql_connect('localhost',$username,$password);
       if (!$link) {
-       echo "<FONT COLOR=RED> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal</FONT>";
+       echo "<FONT COLOR=RED> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</FONT>";
       formular();
        exit;
       }
@@ -98,7 +98,7 @@ else
         $zahlen=explode(".",$datum);
 	if(!checkdate($zahlen[1],$zahlen[0],$zahlen[2]) )
         {
-	   echo "<FONT COLOR=RED> Datum bitte im vormat TT.MM.YYYY eingeben</FONT><BR>";
+	   echo "<FONT COLOR=RED>Geburtsdatum bitte im Format <em>TT.MM.YYYY</em> eingeben</FONT><BR>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
 		
 		exit;
@@ -111,7 +111,7 @@ else
           echo mysql_error() ."<BR>";
           if(mysql_errno()==1062)
 	  {
-            echo "<FONT COLOR=RED>Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Eamil an uns</FONT><BR>";
+            echo "<FONT COLOR=RED>Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Email support@piratenpartei-bayern.de an uns</FONT><BR>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
  		exit;
           }
@@ -122,7 +122,7 @@ else
                 exit;
           }
         } 
-      echo "<FONT COLOR=GREN>Vielen Dank Deine Daten wurden Gespeichert</FONT><BR>";
+      echo "<FONT COLOR=GREN>Vielen Dank, Deine Daten wurden gespeichert</FONT><BR>";
 //		formular();
       mysql_close($link); 
    }
