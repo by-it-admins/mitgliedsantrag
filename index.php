@@ -53,7 +53,7 @@ function leer($feld,$text,$titel='',$vorname='',$nachname='',$email='',$gebdatum
 {
    if($feld=="")
    {
-	echo "<FONT COLOR=RED> $text darf nicht leer sein </FONT><BR>";
+	echo "<p style='color: red;' > $text darf nicht leer sein </p>";
 	formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
 	exit;
    }
@@ -66,7 +66,7 @@ else
    {
      $link=mysql_connect('localhost',$username,$password);
       if (!$link) {
-       echo "<FONT COLOR=RED> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</FONT>";
+       echo "<p style='color: red;' > Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</p>";
       formular();
        exit;
       }
@@ -98,7 +98,7 @@ else
         $zahlen=explode(".",$datum);
 	if(!checkdate($zahlen[1],$zahlen[0],$zahlen[2]) )
         {
-	   echo "<FONT COLOR=RED>Geburtsdatum bitte im Format <em>TT.MM.YYYY</em> eingeben</FONT><BR>";
+	   echo "<p style='color: red;' >Geburtsdatum bitte im Format <em>TT.MM.YYYY</em> eingeben</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
 		
 		exit;
@@ -108,21 +108,21 @@ else
       $erg=mysql_query("insert into Mitglieder (titel,vorname,nachname,gebdatum,strasse,hausnummer,plz,ort,email,telefon,fax,nation,Newsletter,jupis,minderung,kommentar,liquid,umfragen,doubler) values('$titel','$vorname','$nachname','$gebdatum','$strasse','$snr','$plz','$ort','$email','$tel','$fax','$nat',$news,$jupi,$arm,'$comment',$liquid,$umfragen,'$doubler')",$link);
       if (mysql_errno()) 
         {
-          echo mysql_error() ."<BR>";
+          echo mysql_error() ."<br />";
           if(mysql_errno()==1062)
 	  {
-            echo "<FONT COLOR=RED>Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Email support@piratenpartei-bayern.de an uns</FONT><BR>";
+            echo "<p style='color: red;' >Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Email support@piratenpartei-bayern.de an uns</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
  		exit;
           }
           else
 	  {
-                 echo "<FONT COLOR=RED> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal</FONT><BR>";
+                 echo "<p style='color: red;'> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
                 exit;
           }
         } 
-      echo "<FONT COLOR=GREN>Vielen Dank, Deine Daten wurden gespeichert</FONT><BR>";
+      echo "<p style='color: green;'>Vielen Dank, Deine Daten wurden gespeichert</p>";
 //		formular();
       mysql_close($link); 
    }
