@@ -8,7 +8,7 @@ switch ($_SERVER['HTTP_ORIGIN']) {
     break;
 }
 
-$config = parse_ini_file("config.php");
+$config = parse_ini_file("config.ini");
 
 
 function formular($titel='',$vorname='',$nachname='',$email='',$gebdatum='',$strasse='',$snr='',$plz='',$ort='',$nat='',$telefon='',$fax='',$newsletter=0,$jupi=0,$arm=0,$liquid=0,$comment='',$umfragen=0)
