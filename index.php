@@ -8,6 +8,10 @@ switch ($_SERVER['HTTP_ORIGIN']) {
     break;
 }
 
+/*
+from http://stackoverflow.com/questions/298745/how-do-i-send-a-cross-domain-post-request-via-javascript
+*/
+
 $config = parse_ini_file("config.ini");
 
 
