@@ -55,7 +55,7 @@ function leer($feld,$text,$titel='',$vorname='',$nachname='',$email='',$gebdatum
 {
    if($feld=="")
    {
-	echo "<p style='color: red;' > $text darf nicht leer sein </p>";
+	echo "<p class='statusmessage' style='color: red;' > $text darf nicht leer sein </p>";
 	formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
 	exit;
    }
@@ -68,7 +68,7 @@ else
    {
      $link=mysql_connect('localhost',$config['username'],$config['password']);
       if (!$link) {
-       echo "<p style='color: red;' > Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</p>";
+       echo "<p class='statusmessage' style='color: red;' > Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal.</p>";
       formular();
        exit;
       }
@@ -100,7 +100,7 @@ else
         $zahlen=explode(".",$datum);
 	if(!checkdate($zahlen[1],$zahlen[0],$zahlen[2]) )
         {
-	   echo "<p style='color: red;' >Geburtsdatum bitte im Format <em>TT.MM.YYYY</em> eingeben</p>";
+	   echo "<p class='statusmessage' style='color: red;' >Geburtsdatum bitte im Format <em>TT.MM.YYYY</em> eingeben</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
 		
 		exit;
@@ -113,18 +113,18 @@ else
           echo mysql_error() ."<br />";
           if(mysql_errno()==1062)
 	  {
-            echo "<p style='color: red;' >Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Email support@piratenpartei-bayern.de an uns</p>";
+            echo "<p class='statusmessage' style='color: red;' >Deine Daten sind schon bei uns eigegangen, sollte dies nicht stimme bitte wende dich per Email support@piratenpartei-bayern.de an uns</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
  		exit;
           }
           else
 	  {
-                 echo "<p style='color: red;'> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal</p>";
+                 echo "<p class='statusmessage' style='color: red;'> Daten konnten nicht gespeichert werden, bitte probiere es später nocheinmal</p>";
 		formular($titel,$vorname,$nachname,$email,$_POST["gebdatum"],$strasse,$snr,$plz,$ort,$nat,$tel,$fax,$news,$jupi,$arm,$liquid,$comment,$umfragen);
                 exit;
           }
         } 
-      echo "<p style='color: green;'>Vielen Dank, Deine Daten wurden gespeichert</p>";
+      echo "<p class='statusmessage' style='color: green;'>Vielen Dank, Deine Daten wurden gespeichert</p>";
 //		formular();
       mysql_close($link); 
    }
