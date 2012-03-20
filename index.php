@@ -12,7 +12,7 @@ switch ($_SERVER['HTTP_ORIGIN']) {
 from http://stackoverflow.com/questions/298745/how-do-i-send-a-cross-domain-post-request-via-javascript
 */
 
-$config = parse_ini_file("config.ini");
+$config = parse_ini_file("config.ini.php");
 
 
 function formular($titel='',$vorname='',$nachname='',$email='',$gebdatum='',$strasse='',$snr='',$plz='',$ort='',$nat='',$telefon='',$fax='',$newsletter=0,$jupi=0,$arm=0,$liquid=0,$comment='',$umfragen=0)
