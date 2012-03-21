@@ -37,7 +37,7 @@ function formular($titel='',$vorname='',$nachname='',$email='',$gebdatum='',$str
 <TR> <TD>Möchtest Du über aktuelle Aktionen der Piraten informiert werden?</TD><TD><input type="checkbox" name="aktion" value="1" <?if ($aktion==1) echo "checked";?>/></TD></TR>
 <TR> <TD COLSPAN=2><SMALL><I>Ich möchte den Newsletter des Landesverband Bayern der Piratenpartei Deutschland abonnieren.</I></SMALL></TD></TR>
 <TR> <TD>Junge Piraten</TD><TD><input type="checkbox" name="jupi" value="1" <?if ($jupi==1) echo "checked";?> /></TD></TR>
-<TR> <TD COLSPAN=2><SMALL><I>Junge Piraten: Ich bin maximal 27 Jahre alt und möchte zusätzlich kostenlos Mitglied der Jugendorganisation Junge Piraten werden.
+<TR> <TD COLSPAN=2><SMALL><I>Junge Piraten: Ich bin maximal 27 Jahre alt und möchte zusätzlich Mitglied der Jugendorganisation Junge Piraten werden.
 Die Satzung der Jungen Piraten erkenne ich an. Der Antrag gilt auch für alle bestehenden und zu gründenden Untergliederungen der Jungen Piraten an meinem Wohnsitz. Der Verein darf über meine E-Mailadresse mit mir Kontakt aufnehmen. Ich erteile mit diesem Antrag die notwendige schriftliche Einwilligung, dass die in diesem Formular gemachten Angaben an die Jungen Piraten übermittelt und ausschließlich für interne Zwecke des Vereins verarbeitet werden dürfen.</I></SMALL></TD></TR>
 <TR> <TD>Beitragsminderung</TD><TD><input type="checkbox" name="arm" value="1" <?if ($arm==1) echo "checked";?>/></TD></TR>
 <TR> <TD>Liquid Feedback Teilname </TD><TD><input type="checkbox" name="liquid" value="1"  <?if ($liquid==1) echo "checked";?>/></TD></TR>
